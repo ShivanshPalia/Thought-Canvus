@@ -5,11 +5,9 @@ import type { PostWithData } from '@/db/queries/posts';
 import CommentIcon from '@mui/icons-material/Comment';
 import {Avatar, AvatarGroup, AvatarIcon} from "@nextui-org/avatar";
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-
 interface PostListProps{
   fetchData:() => Promise<PostWithData[]>
 }
-
 export default async function PostList({fetchData}:PostListProps) {
   const posts = await fetchData();
   const renderedPosts = posts.map((post) => {
